@@ -1,0 +1,45 @@
+
+[
+  {
+    "id": 1,
+    "title": "kts builders website",
+    "tags": ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
+    "img": "https://www.ktsbuilders.com.np/logo1.png",
+    "link": "https://www.ktsbuilders.com.np/"
+  },
+  {
+    "id": 2,
+    "title": "Hemant tiwari portfolio website",
+    "tags": ["Next.js", "Tailwind"],
+    "img": "/hemant.jpeg",
+    "link": "https://hemant-tiwari.vercel.app/"
+  },
+  {
+    "id": 3,
+    "title": "AI chatbot for mental health support system",
+    "tags": ["Node.js", "Socket.io", "D3.js"],
+    "img": "/AIchatbot.png",
+    "link": "https://ai-chatbot-for-mental-health.vercel.app/"
+  },
+  {
+    "id": 4,
+    "title": "E-commerce Website",
+    "tags": ["Node.js", "PostgreSQL", "Redis", "Stripe", "AWS"],
+    "img": "/ecommerce.jpg",
+    "link": "https://e-commerce-website.vercel.app/"
+  },
+  {
+    "id": 5,
+    "title": "Cloud Infrastruture",
+    "tags": ["AWS", "Docker", "Terraform"],
+    "img": "/cloudInfrastructure.png",
+    "link": "https://cloud-infrastructure.vercel.app/"
+  },
+  {
+    "id": 6,
+    "title": "Social Media API",
+    "tags": ["GraphQL", "MongoDB", "Redis"],
+    "img": "/socialMediaAPI.png",
+    "link": "https://social-media-api.vercel.app/"
+  }
+]

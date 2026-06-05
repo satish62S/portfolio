@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Aakash Shah",
+    "role": "CEO, Streamline Tech",
+    "image": "https://i.pravatar.cc/150?u=alex",
+    "text": "Working with Satish was a game-changer for our platform. His ability to architect scalable solutions while maintaining a slick UI is unmatched."
+  },
+  {
+    "id": 2,
+    "name": "Hemant Tiwari",
+    "role": "Product Manager, InnovateIO",
+    "image": "https://i.pravatar.cc/150?u=sarah",
+    "text": "The data analyst skills Satish brought to the table helped us uncover insights we never knew existed. Truly a versatile and talented developer."
+  },
+  {
+    "id": 3,
+    "name": "Bishal Paudel",
+    "role": "Founder, VibeDesign",
+    "image": "https://i.pravatar.cc/150?u=marcus",
+    "text": "Satish has an incredible eye for detail. The frontend performance of our new dashboard is light-years ahead of our previous version."
+  },
+  {
+    "id": 4,
+    "name": "Mahesh Pokherel",
+    "role": "Director, CloudScale",
+    "image": "https://i.pravatar.cc/150?u=emily",
+    "text": "Extremely professional and reliable. Satish delivered a complex full-stack architecture ahead of schedule and perfectly within budget."
+  },
+  {
+    "id": 5,
+    "name": "Nabin Pokharel",
+    "role": "Sr. Data Analyst, Globant",
+    "image": "https://i.pravatar.cc/150?u=david",
+    "text": "The integration of real-time features in our app was seamless. Satish's technical depth in Node.js and React is truly impressive."
+  },
+  {
+    "id": 6,
+    "name": "Sulav Bhandari",
+    "role": "UX Researcher, FlowState",
+    "image": "https://i.pravatar.cc/150?u=sophia",
+    "text": "Rarely do you find a developer who understands UX as well as Satish does. He built a system that is as intuitive as it is powerful."
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "socialLinks": [
+    { "name": "GitHub", "href": "https://github.com" },
+    { "name": "LinkedIn", "href": "https://linkedin.com" },
+    { "name": "Twitter", "href": "https://twitter.com" }
+  ],
+  "contactInfo": [
+    { "label": "Loc", "value": "Butwal, Nepal" },
+    { "label": "Mail", "value": "khanalsatish59@gmail.com" }
+  ]
+}
