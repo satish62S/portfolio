@@ -84,7 +84,7 @@ const ContactSection = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  placeholder="John Doe"
+                  placeholder="hari gautam"
                   className="w-full bg-slate-950/50 border border-white/10 rounded-xl px-4 py-3 text-white text-sm sm:text-base focus:outline-none focus:border-primary/50 transition-all placeholder:text-slate-700"
                 />
               </div>
@@ -96,7 +96,7 @@ const ContactSection = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  placeholder="john@example.com"
+                  placeholder="abc@example.com"
                   className="w-full bg-slate-950/50 border border-white/10 rounded-xl px-4 py-3 text-white text-sm sm:text-base focus:outline-none focus:border-primary/50 transition-all placeholder:text-slate-700"
                 />
               </div>
@@ -110,7 +110,7 @@ const ContactSection = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                placeholder="Project Inquiry"
+                placeholder="i wanto to do project abc with you cause ..."
                 className="w-full bg-slate-950/50 border border-white/10 rounded-xl px-4 py-3 text-white text-sm sm:text-base focus:outline-none focus:border-primary/50 transition-all placeholder:text-slate-700"
               />
             </div>
