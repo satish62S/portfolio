@@ -1,10 +1,30 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const ContactSection = () => {
   const headerReveal = useScrollReveal({ threshold: 0.2 });
   const formReveal = useScrollReveal({ threshold: 0.15 });
+
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Simulate network request
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      setTimeout(() => setIsSubmitted(false), 5000);
+    }, 1500);
+  };
 
   return (
     <section id="contacts" className="py-16 sm:py-24 bg-slate-gray px-4 sm:px-6 md:px-12">
@@ -54,12 +74,16 @@ const ContactSection = () => {
           ref={formReveal.ref}
           className={`reveal reveal-right bg-slate-900/40 backdrop-blur-xl p-6 sm:p-8 md:p-12 rounded-3xl border border-white/5 shadow-2xl ${formReveal.isVisible ? 'revealed' : ''}`}
         >
-          <form className="space-y-4 sm:space-y-6" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-4 sm:space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div className="space-y-2">
                 <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Full Name</label>
                 <input 
                   type="text" 
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   placeholder="John Doe"
                   className="w-full bg-slate-950/50 border border-white/10 rounded-xl px-4 py-3 text-white text-sm sm:text-base focus:outline-none focus:border-primary/50 transition-all placeholder:text-slate-700"
                 />
@@ -68,6 +92,10 @@ const ContactSection = () => {
                 <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Email Address</label>
                 <input 
                   type="email" 
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   placeholder="john@example.com"
                   className="w-full bg-slate-950/50 border border-white/10 rounded-xl px-4 py-3 text-white text-sm sm:text-base focus:outline-none focus:border-primary/50 transition-all placeholder:text-slate-700"
                 />
@@ -78,6 +106,10 @@ const ContactSection = () => {
               <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Subject</label>
               <input 
                 type="text" 
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                required
                 placeholder="Project Inquiry"
                 className="w-full bg-slate-950/50 border border-white/10 rounded-xl px-4 py-3 text-white text-sm sm:text-base focus:outline-none focus:border-primary/50 transition-all placeholder:text-slate-700"
               />
@@ -87,14 +119,37 @@ const ContactSection = () => {
               <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Message</label>
               <textarea 
                 rows="4"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
                 placeholder="Tell me about your project..."
                 className="w-full bg-slate-950/50 border border-white/10 rounded-xl px-4 py-3 text-white text-sm sm:text-base focus:outline-none focus:border-primary/50 transition-all placeholder:text-slate-700 resize-none"
               ></textarea>
             </div>
 
-            <button type="submit" onClick={() => alert('Message Sent Successfully!')} className="w-full bg-primary hover:bg-primary/80 text-white font-bold py-3.5 sm:py-4 rounded-xl transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40 active:scale-[0.98] cursor-pointer text-sm sm:text-base">
-              Send Message
+            <button 
+              type="submit" 
+              disabled={isSubmitting}
+              className="w-full bg-primary hover:bg-primary/80 disabled:bg-primary/50 disabled:cursor-not-allowed text-white font-bold py-3.5 sm:py-4 rounded-xl transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40 active:scale-[0.98] cursor-pointer text-sm sm:text-base flex items-center justify-center gap-2"
+            >
+              {isSubmitting ? (
+                <>
+                  <svg className="animate-spin -ml-1 mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Sending...
+                </>
+              ) : isSubmitted ? (
+                'Message Sent Successfully!'
+              ) : (
+                'Send Message'
+              )}
             </button>
+            {isSubmitted && (
+              <p className="text-green-400 text-sm text-center mt-2 font-medium">Thank you! Your message has been received.</p>
+            )}
           </form>
         </div>
       </div>
